@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class XYazdirma {
+
+	public static void main(String[] args) {
+		// Büyük X yazdırma programı
+			int n;
+			Scanner keyboard= new Scanner(System.in);
+			System.out.println("Büyük X yazdırma programına hoş geldiniz.");
+			System.out.print("Lütfen satır sayısı için 3 ile 21 arasında bir tek sayı giriniz:");
+			n= keyboard.nextInt();
+			// n sayı değeri için verilen aralığı sağlama ve döngü koşulları
+			if(n>=3 && n<=21 && n%2==1) 
+					
+			for(int i=1; i<=n; i++) {
+				for(int j=1; j<=n; j++) {
+					if(i+j-1 ==n || i==j)
+						System.out.print("*");
+					else
+						System.out.print(" "); }
+						System.out.println();}
+	//Aralık dışında girilen değerin koşulu sağlamaması durumu ve yeni bir değer ile 'X' yazımı
+				
+		if(!(n>=3 && n<=21 && n%2==1)) {
+			System.out.println("Geçerli olmayan bir satır sayısı girdiniz.");
+			System.out.print("Lütfen satır sayısı için 3 ile 21 arasında bir tek sayı giriniz:"); }
+			n=keyboard.nextInt();
+				for(int i=1; i<=n; i++) {
+					for(int j=1; j<=n; j++) {
+						if(i+j-1 ==n || i==j)
+						System.out.print("*");
+						else
+						System.out.print(" "); }
+						System.out.println();}
+					
+						
+				}
+				
+	
+	}
+
+
