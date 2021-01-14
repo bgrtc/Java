@@ -1,0 +1,145 @@
+import java.util.Scanner;
+public class DrawShapes {
+	
+	//Birden Fazla Metot İçeren Menü Kontrollü Java Programı
+	public static void main(String[] args) {
+		Scanner keyboard=new Scanner(System.in);
+		int choice;
+		do {
+		displayMenu();
+		choice = readChoice(keyboard);
+		switch (choice) {
+		case 1: ucgenCiz(keyboard); break;
+		case 2: tersUcgenCiz(keyboard); break;
+		case 3: baklavaCiz(keyboard); break;
+		case 4: kumSaatiCiz(keyboard); break;
+		case 5: roketCiz(keyboard); break;
+		case 6: sayBye();
+		}
+		} while(choice != 6); 
+		
+	    	}
+	//Ekrana menüyü yazdırma metodu
+	public static void displayMenu() {
+		System.out.println("Seklinizi secin!");
+		System.out.println("1. Ucgen");
+		System.out.println("2. Ters Ucgen");
+		System.out.println("3. Baklava Sekli");
+		System.out.println("4. Kum Saati");
+		System.out.println("5. Roket");
+		System.out.println("6. Cık");
+		return;					
+	}
+	
+	//Kullanıcıdan 1 ile 6 arasında bir seçim yapsını isteyen metot
+	public static int readChoice(Scanner keyboard) {
+		int choice;
+		do {
+		System.out.print("Opsiyon: ");
+		choice=keyboard.nextInt();
+		if(choice<1||choice>6)
+			System.out.println("1 ile 6 arasında bir opsiyon girin.");
+		}while(choice<1||choice>6);
+				return choice;
+	}
+	
+	//Kullanıcıdan 3 ile 20 arasında üçgen yüksekliği girmesini isteyen metot
+	public static int readSize(Scanner keyboard) {
+		int size;
+		do {
+		System.out.print("Ucgen yuksekligi: ");
+		size=keyboard.nextInt();
+		if(size<3|| size>20)
+			System.out.println("3 ile 20 arasında bir ucgen yuksekligi girin.");
+		}while(size<3||size>20);
+		return size;
+		
+	}
+	
+	// h yüksekliğinde üçgen çizme
+	public static void drawTriangle(int h) {
+		
+		for(int i=1; i<=h;i++) {
+ 			for(int k=1;k<=h-i;k++) {
+ 				System.out.print(" ");}
+ 			for(int m=1;m<=2*i-1;m++) {
+ 				System.out.print("*");}
+ 			System.out.println();}
+		}
+	
+	// h yüksekliğinde ters üçgen çizme
+	public static void drawUpsideDownTriangle(int h) {
+		
+		for(int i=h; i>=0;i--) {
+			for(int k=1; k<=h-i;k++) {
+				System.out.print(" ");}
+			for(int m=1;m<=2*i-1;m++) {
+				System.out.print("*");}
+			System.out.println();}
+    
+	}
+	
+	// Üçgenin tabanındaki (2*h-1) yıldız sayısı kadar kare çizme 
+	public static void drawSquare(int h) {
+		
+		for(int i=1;i<=h;i++) {
+    		for(int j=1;j<=2*h-1;j++) {
+    			if(j==1||j==2*h-1||i==1||i==h)
+    				System.out.print("*");
+    			else
+    				System.out.print(" ");
+    		}
+    		System.out.println();}
+    	}
+	
+	//readSize ve drawTriangle metotlarını çağırarak üçgen çizme
+	public static void ucgenCiz(Scanner keyboard) {
+		int h;
+ 	    h=readSize(keyboard);
+        drawTriangle(h); 
+	}
+	
+	//readSize ve drawUpsideDownTriangle metotlarını çağırarak ters üçgen çizme
+	public static void tersUcgenCiz(Scanner keyboard) {
+		int h;
+        h=readSize(keyboard);
+        drawUpsideDownTriangle(h);
+	}
+	
+	//readSize, drawTriangle ve drawUpsideDownTriangle metotlarını çağırarak baklava deseni çizme
+	public static void baklavaCiz(Scanner keyboard) {
+		int h;
+		h=readSize(keyboard);
+    	drawTriangle(h);
+		drawUpsideDownTriangle(h);
+	}
+	
+	//readSize, drawUpsideDownTriangle ve drawTriangle metotlarını çağırarak kum saati deseni çizme
+	public static void kumSaatiCiz(Scanner keyboard) {
+		int h;
+		h=readSize(keyboard);
+    	drawUpsideDownTriangle(h);
+		drawTriangle(h);
+	}
+	
+	//readSize, drawTriangle ve drawSquare metotlarını çağırarak roket deseni çizme
+	public static void roketCiz(Scanner keyboard) {
+		int h;
+    	h=readSize(keyboard);
+    	drawTriangle(h);
+        drawSquare(h);
+	}
+	
+	//Programı sona erdiğini belirten ifade yazımı
+	public static void sayBye() {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Bye");
+		keyboard.close();
+	}
+	
+	
+	
+	
+
+	
+}
