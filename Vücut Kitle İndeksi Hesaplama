@@ -1,0 +1,46 @@
+import java.util.Scanner;
+   public class Vki {
+
+	public static void main(String[] args) {
+		// Vücut Kitle İndeksi Hesaplama Programı
+		System.out.println("Vücut Kitle İndeksi Hesaplama Programı");
+		
+		// Boy ve ağırlık değerlerinin okunması
+		
+		Scanner keyboard = new Scanner(System.in);
+		double kilo,boy, vki;
+		System.out.print("Vücut Ağırlığınız (kg):" );
+		kilo = keyboard.nextDouble();
+		System.out.print("Boy uzunluğunuz (m):" );
+		boy = keyboard.nextDouble();
+		
+		//Vücut kitle indeksinin hesaplanması
+		
+		vki = kilo /(boy*boy);
+		System.out.printf("Vücut Kitle İndeksiniz:  %.3f\n", vki);
+				
+						
+			if(vki<20) {
+			System.out.println("Şişmanlık Sınıflandırmanız: Zayıf ");}
+			else if( vki>=20 && vki<25 ) {
+			System.out.println("Şişmanlık Sınıflandırmanız: Normal "); }
+			else if(vki>=25 && vki<30) {
+			System.out.println("Şişmanlık Sınıflandırmanız: Hafif Şişman ");}
+			else if(vki>=30 && vki<35) {
+			System.out.println("Şişmanlık Sınıflandırmanız: Şişman-Obez I ");}
+			else if(vki>=35 && vki<45) {
+			 System.out.println("Şişmanlık Sınıflandırmanız: Şişman-Obez II "); }
+			else if(vki>=45) {
+			 System.out.println("Şişmanlık Sınıflandırmanız: Şişman-Obez III "); }
+			else {
+			 System.out.println("Hata oluştu"); }
+					
+			
+			
+				}
+
+		
+
+	}
+
+
